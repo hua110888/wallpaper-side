@@ -1,14 +1,10 @@
-functionsDirectory = "/opt/build/repo/netlify/functions"
-functionsDirectoryOrigin = "default"
 headersOrigin = "inline"
 redirectsOrigin = "inline"
 
 [build]
-publish = "/opt/build/repo/.next"
+publish = "."
 publishOrigin = "config"
-commandOrigin = "config"
-command = "npm run build"
-functions = "/opt/build/repo/netlify/functions"
+functions = "netlify/functions"
 
   [build.environment]
   NEXT_TELEMETRY_DISABLED = "1"
@@ -28,7 +24,7 @@ functions = "/opt/build/repo/netlify/functions"
 [database]
 
   [database.migrations]
-  path = "/opt/build/repo/netlify/database/migrations"
+  path = "netlify/database/migrations"
 
 [images]
 remote_images = [
@@ -39,12 +35,6 @@ remote_images = [
 [functions]
 
   [functions."*"]
-
-[[plugins]]
-origin = "config"
-package = "@netlify/plugin-nextjs"
-
-  [plugins.inputs]
 
 [[headers]]
 for = "/_next/static/*"
